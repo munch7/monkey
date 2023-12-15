@@ -1,0 +1,163 @@
+<div class="col-md-12 col-sm-12 col-xs-12 container" align="center">
+
+  <div class="home">
+    <!-- <h1 style="margin-top: 40px;">Monkey Chore</h1> -->
+    <img src="../assets/image-removebg-preview.png" width="35%">
+
+    <div class="nav">links</div>
+
+    <p>We decided to start this business because we saw a need. Modern life demands that we be in 5 places at once and it’s exhausting. 
+      Sometimes we all need a little help. That’s where we come in. We’ll stay in and wait for that delivery you’re expecting 
+      that was supposed to be here last week, build that flat pack bookcase you’ve been meaning to sort out and then cut the grass all in 
+      one go.
+    </p>
+    <hr>
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <ul class="col-md-12 col-sm-12 col-xs-12">
+        <li
+          class="list-group-item cat"
+          *ngFor="let Category of Categories; let i = index"
+          style="text-align: center;; font-size: x-large; padding: 0px; border: 0px;">
+            <b>{{ Category.name }}</b><br>
+            <i>{{ Category.description }}</i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12" style="background: lightcyan; padding: 20px;">
+      <h2>CHOOSE YOUR CHORES</h2>
+      <form (ngSubmit)="onSubmit()" class="form">
+        <!-- <i><p>// Fill in Form...</p></i> -->
+
+        <div class="col-xs-12">
+          <div class="form-group">
+            <!-- <label for="categoryName">Choose a task</label> -->
+            <select
+              type="text"
+              id="categoryName"
+              class="form-control"
+              formControlName="categoryName">
+              <option>--Select a category--</option>
+              <option *ngFor="let Category of Categories; let i = index">{{ Category.name }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="categoryDescription">Description</label>
+            <textarea
+              type="text"
+              id="categoryDescription"
+              class="form-control"
+              formControlName="categoryDescription"
+              rows="6"></textarea>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="location"
+              id="location"
+              formControlName="location"
+              class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input
+              type="date"
+              id="date"
+              formControlName="date"
+              class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Enter your name here</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Jane Doe"
+              formControlName="name"
+              class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="contact">Enter your contact</label>
+            <input
+              type="text"
+              id="contact"
+              placeholder="Jane 07023456789"
+              formControlName="contact"
+              class="form-control">
+          </div>
+        </div>
+        <button>Request
+        </button>
+      </form>
+    <!-- <form [formGroup]="choreForm" (ngSubmit)="onSubmit()">
+           formControlName="name">
+            </div>
+            <div class="col-xs-2">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="amount">
+            </div>
+            <div class="col-xs-2">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteIngredient(i)">X</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="button"
+                class="btn btn-success">Add Ingredient</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form> -->
+
+    </div>
+    <hr>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <img src="../assets/image-removebg-preview(1).png" width="35%">
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12" align="center" style="background: rgb(193, 252, 252);">
+        <h2>Taskers</h2>
+        <ul>
+          <li
+            class="list-group-item"
+            *ngFor="let Tasker of Taskers; let i = index"
+            style="font-size: x-large;">
+            <!-- <b>{{ Tasker.index }}</b> -->
+            <b>{{ Tasker.name }} </b> 
+            <i>{{ Tasker.location }}</i><br>
+            {{ Tasker.category }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr style="border-color: white; border-width: 2px;">
+
+  </div>
+<hr>
+  <div class="foot col-md-12">
+    <div class="task"> 
+      <button>Sign up as a Tasker</button>
+    </div>
+    <h3>Contact us for more info</h3>
+  </div>
+
+</div>

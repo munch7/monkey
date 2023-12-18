@@ -37,8 +37,9 @@ li{
     width: 80%;
     background-color: lightcyan;
 }
-.foot{
+.foote{
     bottom: 0px;
+    padding:20px;
     /* position: fixed; */
     width: 100%;
     /* background: lightcoral; */

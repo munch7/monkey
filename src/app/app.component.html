@@ -14,24 +14,25 @@
     <hr>
 
     <div class="col-md-6 col-sm-6 col-xs-12">
+      <h2>SERVICES WE PROVIDE</h2>
       <ul class="col-md-12 col-sm-12 col-xs-12">
         <li
           class="list-group-item cat"
           *ngFor="let Category of Categories; let i = index"
-          style="text-align: center;; font-size: x-large; padding: 0px; border: 0px;">
-            <b>{{ Category.name }}</b><br>
-            <i>{{ Category.description }}</i>
+          style="text-align: left; font-size: x-large; padding: 0px; border: 0px;">
+            <b>{{ Category.name }}</b> -
+            <i> {{ Category.description }}</i>
         </li>
       </ul>
     </div>
+
     <div class="col-md-6 col-sm-6 col-xs-12" style="background: lightcyan; padding: 20px;">
       <h2>CHOOSE YOUR CHORES</h2>
-      <form (ngSubmit)="onSubmit()" class="form">
-        <!-- <i><p>// Fill in Form...</p></i> -->
-
+      
+      <!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm"> -->
+      <form>
         <div class="col-xs-12">
           <div class="form-group">
-            <!-- <label for="categoryName">Choose a task</label> -->
             <select
               type="text"
               id="categoryName"
@@ -42,15 +43,14 @@
             </select>
           </div>
         </div>
-
         <div class="col-xs-12">
           <div class="form-group">
-            <label for="categoryDescription">Description</label>
+            <label for="description">Description</label>
             <textarea
               type="text"
-              id="categoryDescription"
+              id="description"
               class="form-control"
-              formControlName="categoryDescription"
+              formControlName="description"
               rows="6"></textarea>
           </div>
         </div>
@@ -58,7 +58,7 @@
           <div class="form-group">
             <label for="location">Location</label>
             <input
-              type="location"
+              type="text"
               id="location"
               formControlName="location"
               class="form-control">
@@ -96,37 +96,13 @@
               class="form-control">
           </div>
         </div>
-        <button>Request
-        </button>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <!-- <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button> -->
       </form>
-    <!-- <form [formGroup]="choreForm" (ngSubmit)="onSubmit()">
-           formControlName="name">
-            </div>
-            <div class="col-xs-2">
-              <input
-                type="number"
-                class="form-control"
-                formControlName="amount">
-            </div>
-            <div class="col-xs-2">
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="onDeleteIngredient(i)">X</button>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-xs-12">
-              <button
-                type="button"
-                class="btn btn-success">Add Ingredient</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form> -->
 
+      <form>
+        
+      </form>
     </div>
     <hr>
 
@@ -148,16 +124,62 @@
           </li>
         </ul>
       </div>
+      <div class="task col-md-6 col-md-offset-3" style="padding: 20px;">
+        <button (click)="toggleElement()">Sign up as a Tasker</button>
+        <form *ngIf="showElement" style="margin: 20px;">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Enter your Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control">
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="contact">Enter your Contact</label>
+              <input
+                type="text"
+                id="contact"
+                formControlName="contact"
+                class="form-control">
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="location">Enter your Location</label>
+              <input
+                type="text"
+                id="location"
+                formControlName="location"
+                class="form-control">
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="skill">Describe your skill set</label>
+              <textarea
+                type="text"
+                id="skill"
+                class="form-control"
+                formControlName="skill"
+                rows="6"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <!-- <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button> -->
+        </form>
+      <h3>Contact us for more info</h3>
+      </div>
     </div>
-    <hr style="border-color: white; border-width: 2px;">
+    <hr>
 
-  </div>
-<hr>
-  <div class="foot col-md-12">
-    <div class="task"> 
-      <button>Sign up as a Tasker</button>
+    <div class="foote col-md-12">
     </div>
-    <h3>Contact us for more info</h3>
+    <hr>
   </div>
 
 </div>
+<!-- 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 -->
